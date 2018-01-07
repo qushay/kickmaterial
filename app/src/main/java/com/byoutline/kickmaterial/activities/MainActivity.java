@@ -51,14 +51,14 @@ public class MainActivity extends KickMaterialBaseActivity {
         toolbar.getBackground().setAlpha((int) (alpha * 255));
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-//        if (!navigationDrawerFragment.isDrawerOpen()) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-//        }
-//        return super.onCreateOptionsMenu(menu);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+////        if (!navigationDrawerFragment.isDrawerOpen()) {
+//        getMenuInflater().inflate(R.menu.main, menu);
+//        return true;
+////        }
+////        return super.onCreateOptionsMenu(menu);
+//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

@@ -48,13 +48,13 @@ public class SearchListFragment extends KickMaterialFragment implements ProjectC
     private static final String SI_KEY_SEARCH_QUERY = "SI_KEY_SEARCH_QUERY";
     private CharSequence restoredSearchQuery = "";
 
-    public static SearchView getSearchView(Context context, Menu menu) {
-        MenuItem item = menu.findItem(R.id.action_search);
-
-        SearchView searchView = (SearchView) item.getActionView();
-        searchView.setQueryHint(context.getString(R.string.search_hint));
-        return searchView;
-    }
+//    public static SearchView getSearchView(Context context, Menu menu) {
+//        MenuItem item = menu.findItem(R.id.action_search);
+//
+//        SearchView searchView = (SearchView) item.getActionView();
+//        searchView.setQueryHint(context.getString(R.string.search_hint));
+//        return searchView;
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -115,34 +115,34 @@ public class SearchListFragment extends KickMaterialFragment implements ProjectC
         }
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        searchView = getSearchView(getActivity(), menu);
-
-        searchView.setIconified(false);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String searchTerm) {
-                updateSearchTerm(searchTerm);
-                // On landscape entry field and soft keyboard may cover whole screen.
-                // Close keyboard when they press search, so they can see result.
-                hostActivity.hideKeyboard();
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String searchTerm) {
-                updateSearchTerm(searchTerm);
-                return true;
-            }
-        });
-        searchView.setQuery(restoredSearchQuery, false);
-        searchView.setOnCloseListener(() -> {
-            // Allow only clearing, do not allow closing.
-            return TextUtils.isEmpty(searchView.getQuery());
-        });
-        super.onCreateOptionsMenu(menu, inflater);
-    }
+//    @Override
+//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+//        searchView = getSearchView(getActivity(), menu);
+//
+//        searchView.setIconified(false);
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String searchTerm) {
+//                updateSearchTerm(searchTerm);
+//                // On landscape entry field and soft keyboard may cover whole screen.
+//                // Close keyboard when they press search, so they can see result.
+//                hostActivity.hideKeyboard();
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String searchTerm) {
+//                updateSearchTerm(searchTerm);
+//                return true;
+//            }
+//        });
+//        searchView.setQuery(restoredSearchQuery, false);
+//        searchView.setOnCloseListener(() -> {
+//            // Allow only clearing, do not allow closing.
+//            return TextUtils.isEmpty(searchView.getQuery());
+//        });
+//        super.onCreateOptionsMenu(menu, inflater);
+//    }
 
     private void updateSearchTerm(String searchTerm) {
         currentSearchTerm = searchTerm;

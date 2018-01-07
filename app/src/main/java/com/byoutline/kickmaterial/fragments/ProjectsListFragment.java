@@ -319,12 +319,12 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
         }
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        SearchView searchView = SearchListFragment.getSearchView(getActivity(), menu);
-        searchView.setIconified(true);
-        searchView.setOnSearchClickListener(v -> hostActivity.showFragment(new SearchListFragment(), true));
-    }
+//    @Override
+//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+//        SearchView searchView = SearchListFragment.getSearchView(getActivity(), menu);
+//        searchView.setIconified(true);
+//        searchView.setOnSearchClickListener(v -> hostActivity.showFragment(new SearchListFragment(), true));
+//    }
 
     @Override
     public void fieldStateChanged(FieldState newState) {
